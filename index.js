@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const fuzz = require('fuzzball');
-let isTrue = true;
+let count = 2;
 
 
 function matchIntent(input, intents) {
@@ -53,13 +53,15 @@ app.get("/flight-details", (req, res) => {
 });
 
 app.get("/hotel-booking", (req, res)=>{
-    if(isTrue){
+    if((count / 2) === 0 ){
+        count++;
         return res.status(200).send({
             from : "19-march-2025",
             to : "25-march-2025",
             hotelName : "hotel taj mumbai"
         })
     }
+    return res.status(400)({message : "Sorry I don't found any bookin in this number"});
 })
 
 // Start the server
