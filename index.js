@@ -56,9 +56,10 @@ app.get("/hotel-booking", (req, res)=>{
     if((count % 2) === 0 ){
         count++;
         return res.status(200).send({
-            from : "19-march-2025",
-            to : "25-march-2025",
-            hotelName : "hotel taj mumbai"
+            reservation : "RB45656",
+            checkIn : "25-March-2025",
+            checkOut : "30-March-2025",
+            hotelName : "Radisson blu, Gurugram"
         })
     }
     count++;
