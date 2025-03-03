@@ -53,7 +53,7 @@ app.get("/flight-details", (req, res) => {
 });
 
 app.get("/hotel-booking", (req, res)=>{
-    if((count / 2) === 0 ){
+    if((count % 2) === 0 ){
         count++;
         return res.status(200).send({
             from : "19-march-2025",
@@ -61,7 +61,7 @@ app.get("/hotel-booking", (req, res)=>{
             hotelName : "hotel taj mumbai"
         })
     }
-    return res.status(400)({message : "Sorry I don't found any bookin in this number"});
+    return res.status(400).json({message : "Sorry I don't found any bookin in this number"});
 })
 
 // Start the server
