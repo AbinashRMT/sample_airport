@@ -54,6 +54,7 @@ app.get("/flight-details", (req, res) => {
 
 app.get("/hotel-booking", (req, res)=>{
     if((count % 2) === 0 ){
+        count++;
         return res.status(200).send({
             from : "19-march-2025",
             to : "25-march-2025",
